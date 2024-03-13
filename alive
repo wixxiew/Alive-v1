@@ -1,0 +1,314 @@
+if not game:IsLoaded() then
+	game.Loaded:Wait()
+end
+
+local Ui = loadstring(game:HttpGet("https://raw.githubusercontent.com/drillygzzly/Other/main/abyssoruce%40eayz.lua"))()
+local Ui = Library
+
+local LoadTime = tick()
+
+local Loader = Library.CreateLoader(
+    "Alive-V1", 
+    Vector2.new(300, 300)
+)
+
+local Window = Library.Window(
+    "Alive", 
+    Vector2.new(500, 620)
+)
+
+Window.SendNotification(
+    "Normal", -- Normal, Warning, Error 
+    "Press RightShift to open menu and close menu!", 
+    10
+)
+
+Window.Watermark(
+    "Alive-V1"
+)
+-- Window:Visible = true
+
+-- // UI Main \\ --
+local Tab1 = Window:Tab("Scripts")
+local Section1 = Tab1:Section(
+    "Normal", 
+    "Left"
+)
+
+Section1:Button({
+    Title = "Anti-Stomp",
+    Callback = function()
+        local Plr = game:GetService("Players").LocalPlayer;
+_G.savedhumanoidpos = Plr.Character.HumanoidRootPart.Position
+while true do
+    pcall(function()
+    if Plr.Character.HumanoidRootPart.Anchored == true then
+    Plr.Character.HumanoidRootPart.Anchored = false --For If Player Is Knocked
+end
+end)
+break
+end
+
+while wait() do
+pcall(function()
+Plr.Character.HumanoidRootPart.Anchored = false    
+if Plr.Character.Humanoid.Health <= 50 then
+    Plr.Character.HumanoidRootPart.CFrame = CFrame.new(71.565, 142.926, -690.33)
+    elseif Plr.Character.Humanoid.Health <= 53 then  --can change if needed
+    Plr.Character.HumanoidRootPart.CFrame = CFrame.new(_G.savedhumanoidpos)
+    end
+end)
+end
+
+
+Plr.Character.HumanoidRootPart.CFrame = CFrame.new(71.565, 142.926, -690.33)
+    end
+})
+
+Section1:Button({
+    Title = "Headless [NOT VISIBLE TO PLAYERS]",
+    Callback = function()
+        game.Players.LocalPlayer.Character.Head.Size = Vector3.new(0,0, 0)
+	game.Players.LocalPlayer.Character.Head.Massless = true
+    end
+})
+
+Section1:Button({}
+    Title = "Korblox [NOT VISIBLE TO PLAYERS]",
+    Callback = function()
+        local ply = game.Players.LocalPlayer
+				local chr = ply.Character
+				chr.RightLowerLeg.MeshId = "902942093"
+				chr.RightLowerLeg.Transparency = "1"
+				chr.RightUpperLeg.MeshId = "http://www.roblox.com/asset/?id=902942096"
+				chr.RightUpperLeg.TextureID = "http://roblox.com/asset/?id=902843398"
+				chr.RightFoot.MeshId = "902942089"
+				chr.RightFoot.Transparency = "1"
+end);
+
+    end
+
+    Section1:Button({
+        Title = "Bank",
+        Callback = function()
+            game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-485.668, 23.631, -285.169)
+        end
+    })
+
+    Section1:Button({
+        Title = "Gun Shop #1",
+        Callback = function()
+            game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-582, 7.172, -739.015)
+        end
+    })
+
+    Section1:Button({
+        Title = "Gun Shop #2",
+        Callback = function()
+            game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(475.022, 48.005, -603.737
+        end
+    })
+
+    Section1:Button({
+        Title = "Food Store #1",
+        Callback = function()
+            game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-333.492065, 23.6826477, -292.959625)
+        end
+    })
+
+    Section1:Button({
+        Title = "Food Store #2",
+        Callback = function()
+            game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(301.780121, 49.2826538, -619.999634)
+        end
+    })
+
+    Section1:Button({
+        Title = "Food Store #3",
+        Callback = function()
+            game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(546.946, 51.061, -493.325)
+        end
+    })
+
+    Section1:Button({
+        Title = "Sewers",
+        Callback = function()
+            game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(112.622, -26.212, -277.321)
+        end
+    })
+
+    Section1:Button({
+        Title = "High School",
+        Callback = function()
+            game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-652, 22, 255)
+        end
+    })
+
+    Section1:Button({
+        Title = "SavePos",
+        Callback = function()
+            _G.savedhumanoidpos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+        end
+    })
+
+    Section1:Button({
+        Title = "TeleportToPos",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(_G.savedhumanoidpos)
+        end
+    })
+
+    Section1:Button({
+        Title = "Penis-Bat",
+        Callback = function()
+            local plr = game.Players.LocalPlayer
+				local savedbatpos = plr.Character.HumanoidRootPart.Position
+				plr.Character.HumanoidRootPart.CFrame = CFrame.new(380.932, 44.318, -284.746)
+				wait(.1)
+				fireclickdetector(game.Workspace.Ignored.Shop['[Bat] - $250'].ClickDetector)
+				fireclickdetector(game.Workspace.Ignored.Shop['[Bat] - $250'].ClickDetector)
+				plr.Character.HumanoidRootPart.CFrame = CFrame.new(savedbatpos)
+				plr.Character.HumanoidRootPart.CFrame = CFrame.new(savedbatpos)
+				wait(2.5)
+				pcall(function()
+					for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+						if v.Name == '[Bat]' then
+							v.Parent = game.Players.LocalPlayer.Character
+						end
+					end
+				end)
+				wait(.9)
+				local plr = game.Players.LocalPlayer
+				local pos = plr.Character.HumanoidRootPart.Position
+				if not game.Players.LocalPlayer.Character:FindFirstChild("[Bat]") then
+					plr.Character.HumanoidRootPart.CFrame = targetpos
+					local cd = game:GetService("Workspace").Ignored.Shop["[Bat] - $350"]:FindFirstChild("ClickDetector")
+					wait(.9)
+					fireclickdetector(cd)
+					wait(.4)
+					game.Players.LocalPlayer.Backpack:FindFirstChild("[Bat]").Parent = plr.Character
+					wait(.9)
+					fireclickdetector(cd)
+					wait(.4)
+					game.Players.LocalPlayer.Backpack:FindFirstChild("[Bat]").Parent = plr.Character
+					for i,v in pairs(plr.Character:GetChildren()) do
+						if v.Name == '[Bat]' then
+							v:GetChildren()[3]:Destroy()
+						end
+					end
+					local sd = plr.Character:FindFirstChild("[Bat]")
+					sd.Grip = CFrame.new(-2.4000001, -0.699999988, 0, 0, 1, -0, -1, 0, -0, 0, 0, 1)
+					sd.GripForward = Vector3.new(0, 0, -1)
+					sd.GripPos = Vector3.new(-2.4, -0.7, 0)
+					sd.GripUp = Vector3.new(1, 0, 0)
+					plr.Character.HumanoidRootPart.CFrame = CFrame.new(pos)
+				end
+				local sd = plr.Character:FindFirstChild("[Bat]")
+				sd.Grip = CFrame.new(-2.4000001, -0.699999988, 0, 0, 1, -0, -1, 0, -0, 0, 0, 1)
+				sd.GripForward = Vector3.new(0, -1, -0)
+				sd.GripPos = Vector3.new(1.2111, 1.11114, 1.8111)
+				sd.GripUp = Vector3.new(-500000, 404, 5000000)
+				plr.Character.HumanoidRootPart.CFrame = CFrame.new(pos)
+end);
+
+        end
+
+    })
+
+    Section1:Button({
+        Title = "Auto-Stomp",
+        Callback = function()
+            if (loopVariables.Autostomp == false) then
+                loopVariables.Autostomp = true
+            else
+                loopVariables.Autostomp = false
+            end
+
+            while true do
+                wait()
+                if loopVariables.Autostomp == true then
+                    game.ReplicatedStorage.MainEvent:FireServer("Stomp")
+                end
+            end
+end);
+        end
+    })
+
+    Section1:Button({
+        Title = "Anti-cum",
+        Callback = function()
+            Player.PlayerGui:FindFirstChild("MainScreenGui"):FindFirstChild("whiteScreen"):Destroy();
+        end
+    })
+
+    Section1:Button({
+        Title = "Anti-fling",
+        Callback = function()
+            local localPlayer = game:GetService('Players').LocalPlayer;
+                local localCharacter = localPlayer.Character;
+                localCharacter:FindFirstChildOfClass('Humanoid').Health = 0;
+                local newCharacter = localPlayer.CharacterAdded:Wait();
+                local spoofFolder = Instance.new('Folder');
+                spoofFolder.Name = 'FULLY_LOADED_CHAR';
+                spoofFolder.Parent = newCharacter;
+                newCharacter:WaitForChild('RagdollConstraints'):Destroy();
+                local spoofValue = Instance.new('BoolValue', newCharacter);
+                spoofValue.Name = 'RagdollConstraints';
+                local name = game.Players.LocalPlayer.Name
+                local lol =    game.Workspace:WaitForChild(name)
+                local money = Instance.new("Folder",game.Players.LocalPlayer.Character);money.Name = "FULLY_LOADED_CHAR"
+                lol.Parent = game.Workspace.Players
+                game.Players.LocalPlayer.Character:WaitForChild("BodyEffects")
+                game.Players.LocalPlayer.Character.BodyEffects.BreakingParts:Destroy()
+        end
+    })
+
+    Section1:Button({
+        Title = "Remove Jump Cooldown",
+        Callback = function()
+            if not game.IsLoaded(game) then 
+                game.Loaded.Wait(game.Loaded);
+            end
+            
+            -- variables 
+            local IsA = game.IsA;
+            local newindex = nil 
+            
+            -- main hook
+            newindex = hookmetamethod(game, "__newindex", function(self, Index, Value)
+                if not checkcaller() and IsA(self, "Humanoid") and Index == "JumpPower" then 
+                    return
+                end
+                
+                return newindex(self, Index, Value);
+            end)
+        end
+    })
+
+    Section1:Button({
+        Title = "NO SLOWDOWN",
+        Callback = function()
+            local mt = getrawmetatable(game)
+local backup
+backup = hookfunction(mt.__newindex, newcclosure(function(self, key, value)
+if key == "WalkSpeed" and value < 16 then
+value = 16
+end
+return backup(self, key, value)
+end))
+        end
+    })
+
+    Section1:Toggle({
+        Title = "AutoFarm", 
+        Flag = "AutoFarm"
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/rapnz/scripts/master/DaHoodFarm.lua"))()
+    }):
+
+
+
+--Tab1:AddPlayerlist()
+Window:AddSettingsTab()
+Window:SwitchTab(Tab1)
+Window.ToggleAnime(false)
+LoadTime = math.floor((tick() - LoadTime) * 1000)
